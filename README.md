@@ -2,7 +2,7 @@
 
 Welcome to the CDKey Online Shop, developed by Taha Code using Next.js 14.
 
-![CDKey Online Shop](https://yourwebsite.com/cdkey-online-shop.png)
+![CDKey Online Shop](/public/cdkey.png)
 
 ## Overview
 
@@ -27,7 +27,6 @@ The CDKey Online Shop is a full-stack web application built with Next.js 14, des
 
 - **Backend**:
   - Node.js
-  - Express.js
   - MongoDB (or any other database used)
 
 ## Installation
