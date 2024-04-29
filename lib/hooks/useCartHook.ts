@@ -65,7 +65,7 @@ export const useCartService = () => {
         exist.qty === 1
           ? items.filter((x: OrderItem) => x.slug !== item.slug)
           : items.map((x) =>
-              item.slug ? { ...exist, qty: exist.qty - 1 } : x
+              x.slug === item.slug ? { ...exist, qty: exist.qty - 1 } : x
             );
 
       const { itemsPrice, totalPrice, taskPrice, shippingPrice } =
@@ -83,9 +83,9 @@ export const useCartService = () => {
 };
 
 const calcPrice = (items: OrderItem[]) => {
-  const itemsPrice = round2(
-    items.reduce((acc, item) => acc + item.price * +item.qty, 0)
-  );
+  const calcTotal = items.reduce((acc, item) => acc + item.price * item.qty, 0);
+
+  const itemsPrice = round2(calcTotal);
 
   const shippingPrice = round2(+itemsPrice > 100 ? 0 : 100);
   const taskPrice = round2(Number(0.15 * +itemsPrice));

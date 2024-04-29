@@ -91,6 +91,10 @@ export default function CartDetails() {
                 })}
               </tbody>
             </table>
+            <div className="divider">
+              Total ({items.reduce((acc, item) => acc + item.qty, 0)}) :
+              <span className="text-lg">${itemPrice}</span>
+            </div>
           </div>
         </div>
       )}
