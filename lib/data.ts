@@ -1,7 +1,17 @@
+import bcrypt from "bcryptjs";
+
 export const data = {
+  users: [
+    {
+      name: "taha",
+      email: "tahanamdar30@gmail.com",
+      password: bcrypt.hashSync("123456"),
+      isAdmin: true,
+    },
+  ],
+
   products: [
     {
-      _id: "1",
       name: "Call of Duty: Modern Warfare",
       slug: "call-of-duty-modern-warfare",
       image:
@@ -19,7 +29,6 @@ export const data = {
       size: ["PS4", "Xbox One", "PC"],
     },
     {
-      _id: "2",
       name: "The Legend of Zelda: Breath of the Wild",
       slug: "legend-of-zelda-breath-of-the-wild",
       image:
@@ -37,7 +46,6 @@ export const data = {
       size: ["Nintendo Switch"],
     },
     {
-      _id: "3",
       name: "FIFA 22",
       slug: "fifa-22",
       image:
@@ -56,7 +64,6 @@ export const data = {
     },
     // Add more entries here as needed
     {
-      _id: "4",
       name: "Assassin's Creed Valhalla",
       slug: "assassins-creed-valhalla",
       image:
@@ -74,7 +81,6 @@ export const data = {
       size: ["PS4", "PS5", "Xbox One", "Xbox Series X", "PC"],
     },
     {
-      _id: "5",
       name: " ",
       slug: "cyberpunk-2077",
       image:
