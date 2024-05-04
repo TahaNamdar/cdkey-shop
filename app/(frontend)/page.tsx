@@ -2,6 +2,7 @@ import ProductItem from "@/components/product/productItem";
 import React from "react";
 import { Metadata } from "next";
 import productService from "@/lib/services/productService";
+import { convertDocToObj } from "@/lib/utils";
 
 const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_APP_NAME,
@@ -55,7 +56,12 @@ export default async function Home() {
         {/* latest product */}
         <div className="grid mx-auto gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {latestProducts.map((product, _) => {
-            return <ProductItem key={product.slug} product={product} />;
+            return (
+              <ProductItem
+                key={product.slug}
+                product={convertDocToObj(product)}
+              />
+            );
           })}
         </div>
       </div>
